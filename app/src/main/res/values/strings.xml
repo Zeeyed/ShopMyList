@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Shop My List</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="detail_prod">Product Detail</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_order">Order</string>
+    <string name="nav_item_scan">Scan</string>
+    <string name="nav_item_logout">Log out</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_order</item>
+        <item>@string/nav_item_scan</item>
+        <item>@string/nav_item_logout</item>
+    </string-array>
+
+    <string-array name="nav_drawer_icons">
+        <item>@drawable/ic_home_black_24dp</item>
+        <item>@drawable/ic_shopping_cart_black_24dp</item>
+        <item>@drawable/ic_find_in_page_black_24dp</item>
+        <item>@drawable/ic_input_black_24dp</item>
+    </string-array>
+
+    <string name="title_order">Order</string>
+    <string name="title_scan">Scan</string>
+    <string name="title_home">Home</string>
+    <string name="title_activity_main">MainActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="error_timeout">Connection is timed out</string>
+    <string name="error_auth_fail">Authentication failed</string>
+    <string name="error_server">Error Server</string>
+    <string name="error_network">Error Network</string>
+    <string name="error_parse">Failed to fetch data</string>
+    <string name="activity_detail_product">Detail Product</string>
+    <string name="ajoufav">Add to favorites</string>
+    <string name="add_fav_dialog">Add To Order</string>
+    <string name="positive_button">No</string>
+    <string name="negative_button">Yes</string>
+    <string name="username">budget</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_link_to_register">Not a member? Sign up now</string>
+    <string name="hint_name">Username</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_login">Already registered! Login Me</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Enter the password</string>
+    <string name="title_loggout">Log Out</string>
+    <string name="order_succeed">Congratulations! Your Order Has Been Sent</string>
+    <string name="btn_scan">SCAN PRODUCT</string>
+    <string name="scan_process">Ready To Scan Your Product ?</string>
+</resources>

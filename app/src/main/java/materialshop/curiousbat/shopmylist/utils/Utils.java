@@ -1,0 +1,39 @@
+package materialshop.curiousbat.shopmylist.utils;
+
+/**
+ * Created by Zied on 10/11/2015.
+ */
+
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
+import android.widget.TextView;
+
+
+public class Utils {
+
+    public static void changeFont(AssetManager assets, TextView txt1) {
+        // TODO Auto-generated method stub
+        Typeface font = Typeface.createFromAsset(assets, "fonts/klavik.ttf");
+        txt1.setTypeface(font);
+    }
+
+    public static void CopyStream(InputStream is, OutputStream os)
+    {
+        final int buffer_size=1024;
+        try
+        {
+            byte[] bytes=new byte[buffer_size];
+            for(;;)
+            {
+                int count=is.read(bytes, 0, buffer_size);
+                if(count==-1)
+                    break;
+                os.write(bytes, 0, count);
+            }
+        }
+        catch(Exception ex){}
+    }
+}

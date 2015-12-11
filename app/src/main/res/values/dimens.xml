@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="nav_drawer_width">260dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="actionbar_dimen">56dp</dimen>
+
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+
+    <dimen name="activity_detail_vertical_margin">88dp</dimen>
+
+    <dimen name="item_grid_item_width">100dp</dimen>
+    <dimen name="item_grid_item_height">170dp</dimen>
+    <dimen name="app_bar_top_padding">0dp</dimen>
+</resources>

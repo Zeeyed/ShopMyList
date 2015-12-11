@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_link_to_register">Not a member? Sign up now</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_login">Already registered! Login Me</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Enter the password</string>
+    <string name="title_loggout">Log Out</string>
+    <string name="order_succeed">Congratulations! Your Order Has Been Sent</string>
+    <string name="btn_scan">SCAN PRODUCT</string>
+    <string name="scan_process">Ready To Scan Your Product ?</string>
+</resources>
