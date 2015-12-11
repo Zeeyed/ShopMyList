@@ -10,6 +10,7 @@ import android.util.Log;
 import java.util.HashMap;
 
 /**
+ * SQLite Handler
  * Created by Zied on 01/09/2015.
  */
 public class SQLiteHandler extends SQLiteOpenHelper {
@@ -41,7 +42,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     /**
      * Creating Table Login
-     * @param db
+     * @param db SQLite Database
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -56,9 +57,9 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     /**
      * Upgrading Table Login
-     * @param db
-     * @param oldVersion
-     * @param newVersion
+     * @param db SQLite Database
+     * @param oldVersion old version database
+     * @param newVersion new version database
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -71,9 +72,9 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     /**
      * Storing user details into SQLite
-     * @param name
-     * @param email
-     * @param password
+     * @param name user name
+     * @param email user email
+     * @param password user password
      */
     public void addUser(String name, String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -92,11 +93,11 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     /**
      * Getting user data from database
-     * @param email
-     * @return
+     * @param email user email
+     * @return List of user detail
      */
     public HashMap<String, String> getUserDetails(String email) {
-        HashMap<String, String> user = new HashMap<String, String>();
+        HashMap<String, String> user = new HashMap<>();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_LOGIN, columns, "email=?", new String[] {email}, null, null, null);
         cursor.moveToFirst();

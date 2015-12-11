@@ -113,9 +113,9 @@ public class RegisterActivity extends Activity {
 
     /**
      * Register the user into Sqlite
-     * @param name
-     * @param email
-     * @param password
+     * @param name name of the user
+     * @param email email of the user
+     * @param password password of the user
      */
     private void registerUser(final String name, final String email, final String password) {
         ProductDatabase mDatabase = new ProductDatabase(this);
@@ -144,9 +144,9 @@ public class RegisterActivity extends Activity {
 
 
     /**
-     * Email validation check
-     * @param target
-     * @return
+     * Email validation check. Returns true if the target is null or 0-length.
+     * @param target the string to be examined
+     * @return true if target is null or zero length
      */
     public static boolean isValidEmail(CharSequence target) {
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
@@ -154,8 +154,8 @@ public class RegisterActivity extends Activity {
 
     /**
      * Password validation check
-     * @param password
-     * @return
+     * @param password the user password
+     * @return true if the user password is more than six character
      */
     public boolean validatePassword(String password){
         return password.length() > 6;

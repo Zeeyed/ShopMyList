@@ -71,8 +71,8 @@ public class ProductDatabase {
 
     /**
      * Insert Products into Sqlite
-     * @param product
-     * @return
+     * @param product product object
+     * @return the row ID of the newly inserted row, or -1 if an error occurred
      */
     public long insertTop(Product product) {
         Cursor cursor = mDatabase.rawQuery("SELECT MAX(" + ProductHelper.ID_PRODUCT
@@ -105,8 +105,8 @@ public class ProductDatabase {
 
     /**
      * Remove a specific product
-     * @param index
-     * @return
+     * @param index index
+     * @return the number of rows affected if a whereClause is passed in, 0 otherwise
      */
     public int removeProduct(int index) {
         return mDatabase.delete(TABLE_PRODUCT, ID_PRODUCT + " = " + index, null);
@@ -123,7 +123,7 @@ public class ProductDatabase {
         String selectQuery = "SELECT  * FROM " + TABLE_PRODUCT;
         Cursor cursor = mDatabase.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
-            while (cursor.isAfterLast() == false) {
+            while (!cursor.isAfterLast()) {
                 Product a = new Product();
                 a.setId(String.valueOf(cursor.getInt(0)));
                 a.setName(cursor.getString(1));
@@ -141,8 +141,8 @@ public class ProductDatabase {
 
     /**
      * Insert User into Sqlite
-     * @param user
-     * @return
+     * @param user user object
+     * @return the row ID of the newly inserted row, or -1 if an error occurred
      */
     public long insertUser(User user) {
         Cursor cursor = mDatabase.rawQuery("SELECT MAX(" + ProductHelper.ID_USER
@@ -165,9 +165,9 @@ public class ProductDatabase {
 
     /**
      * Get a user from his email and password
-     * @param email
-     * @param pass
-     * @return
+     * @param email user email
+     * @param pass user password
+     * @return user object, otherwise null
      */
     public User searchPassword(String email, String pass){
         open();
@@ -176,7 +176,7 @@ public class ProductDatabase {
         String selectQuery = "SELECT  * FROM " + TABLE_USER +" "+" where "+NAME_USER +" = \'"+ email+"\' AND "+PASS_USER+"= \'"+ pass +"\'";
         Cursor cursor = mDatabase.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
-            while (cursor.isAfterLast() == false) {
+            while (!cursor.isAfterLast()) {
                 user.setId(cursor.getInt(0));
                 user.setName(cursor.getString(1));
                 user.setEmail(cursor.getString(2));
@@ -191,8 +191,8 @@ public class ProductDatabase {
 
     /**
      * Insert favorites product into Sqlite
-     * @param product
-     * @return
+     * @param product product object
+     * @return the row ID of the newly inserted row, or -1 if an error occurred
      */
     public long insertFavorites(Product product) {
 
@@ -227,7 +227,7 @@ public class ProductDatabase {
 
     /**
      * Remove a specific favorite product
-     * @param index
+     * @param index index
      * @return the number of rows affected if a whereClause is passed in, 0 otherwise
      */
     public int removeFavorite(int index) {
@@ -248,7 +248,7 @@ public class ProductDatabase {
 
         if (cursor.moveToFirst()) {
 
-            while (cursor.isAfterLast() == false) {
+            while (!cursor.isAfterLast()) {
                 Product a = new Product();
                 a.setId(String.valueOf(cursor.getInt(0)));
                 a.setName(cursor.getString(1));
@@ -266,7 +266,7 @@ public class ProductDatabase {
 
     /**
      * Get a specific favorite product
-     * @param id
+     * @param id id favorite
      * @return Favorite Product
      */
     public Product selectfavorite(int id ) {
@@ -275,7 +275,7 @@ public class ProductDatabase {
         String selectQuery = "SELECT  * FROM " + TABLE_FAVORITE +" "+" where "+ID_FAVORIT +" = "+id ;
         Cursor cursor = mDatabase.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
-            while (cursor.isAfterLast() == false) {
+            while (!cursor.isAfterLast()) {
                 product.setId(String.valueOf(cursor.getInt(0)));
                 product.setName(cursor.getString(1));
                 product.setUnitCost(cursor.getString(2));
@@ -290,14 +290,18 @@ public class ProductDatabase {
     }
 
 
-
+    /**
+     * Get the selected product by its barcode
+     * @param id product id
+     * @return product object, otherwise null
+     */
     public Product selectProductByBarCode(int id ) {
         open();
         Product product =new Product();
         String selectQuery = "SELECT  * FROM " + TABLE_PRODUCT +" "+" where "+ID_PRODUCT +" = "+id ;
         Cursor cursor = mDatabase.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
-            while (cursor.isAfterLast() == false) {
+            while (!cursor.isAfterLast()) {
                 product.setId(String.valueOf(cursor.getInt(0)));
                 product.setName(cursor.getString(1));
                 product.setUnitCost(cursor.getString(2));
@@ -314,8 +318,8 @@ public class ProductDatabase {
 
     /**
      * Overriding toString method
-     * @param product
-     * @return
+     * @param product product object
+     * @return Product String details
      */
     public String toString(Product product) {
         return "ID " +  product.getId()+

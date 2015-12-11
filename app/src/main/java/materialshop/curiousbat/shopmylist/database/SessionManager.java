@@ -35,7 +35,7 @@ public class SessionManager {
 
     /**
      * Set login and save into SharedPreferences
-     * @param isLoggedIn
+     * @param isLoggedIn boolean parameter to see if user is logged in or not
      */
     public void setLogin(boolean isLoggedIn){
         editor.putBoolean(KEY_IS_LOGGEDIN, isLoggedIn);

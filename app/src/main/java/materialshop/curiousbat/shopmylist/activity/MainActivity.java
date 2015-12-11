@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     int selectedPosition = 0;
 
-    List<Product> productList = new ArrayList<Product>();
+    List<Product> productList = new ArrayList<>();
 
     private static String TAG = MainActivity.class.getSimpleName();
 
@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
-
-        //mToolbar.setTitleTextColor(R.color.white);
 
         ProductDatabase mDatabase = new ProductDatabase(this);
         mDatabase.open();

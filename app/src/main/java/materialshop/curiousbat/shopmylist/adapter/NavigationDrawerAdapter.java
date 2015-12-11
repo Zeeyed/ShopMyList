@@ -15,6 +15,7 @@ import materialshop.curiousbat.shopmylist.R;
 import materialshop.curiousbat.shopmylist.model.NavDrawerItem;
 
 /**
+ * Navigation Drawer Adapter
  * Created by Zied on 17/10/2015.
  */
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder> {

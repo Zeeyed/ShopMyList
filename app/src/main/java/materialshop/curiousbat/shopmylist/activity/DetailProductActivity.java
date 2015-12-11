@@ -64,6 +64,9 @@ public class DetailProductActivity extends AppCompatActivity implements ISimpleD
 
     }
 
+    /**
+     * Initialize the view
+     */
     private void initView() {
 
         // Row Container
@@ -91,8 +94,6 @@ public class DetailProductActivity extends AppCompatActivity implements ISimpleD
         final String image = intent.getExtras().getString(INTENT_PUTEXTRA_IMG);
         final String category = intent.getStringExtra(INTENT_PUTEXTRA_CAT);
 
-        // toolbar.setTitle(item.name);
-
         Log.i("Hotels", "id = " + idd);
         Log.i("Hotels", "link = " + name);
         Log.i("Hotels", "desc = " + unicost);
@@ -100,16 +101,12 @@ public class DetailProductActivity extends AppCompatActivity implements ISimpleD
         Log.i("Hotels", "image = " + image);
         Log.i("Hotels", "category = " + category);
 
-
         View view = rowContainer.findViewById(R.id.row_image);
 
         ImageView iv = (ImageView) view.findViewById(R.id.img_details);
 
-
         ImageLoader imageLoader = new ImageLoader(this);
         imageLoader.DisplayImage(image, iv);
-
-        Log.d("Log imaaaaage ", image.toString());
 
         view = rowContainer.findViewById(R.id.row_name);
         fillRow(view, "Name : ", name);
@@ -156,7 +153,10 @@ public class DetailProductActivity extends AppCompatActivity implements ISimpleD
         setSupportActionBar(mToolbar);
     }
 
-
+    /**
+     * Insert Favorites Products into SQLite
+     * @param requestCode request code
+     */
     @Override
     public void onNegativeButtonClicked(int requestCode) {
         if (requestCode == REQUEST_SIMPLE_DIALOG) {

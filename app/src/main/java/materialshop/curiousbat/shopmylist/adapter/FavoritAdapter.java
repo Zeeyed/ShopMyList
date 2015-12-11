@@ -22,6 +22,7 @@ import materialshop.curiousbat.shopmylist.network.VolleySingleton;
 
 
 /**
+ * Favorite Adapter
  * Created by Zied on 14/11/2015.
  */
 public class FavoritAdapter extends RecyclerView.Adapter<FavoritAdapter.ViewHolderFav>{
@@ -41,13 +42,17 @@ public class FavoritAdapter extends RecyclerView.Adapter<FavoritAdapter.ViewHold
 
     /**
      * Set The List of products
-     * @param listProduct
+     * @param listProduct ArrayList of products
      */
     public void setProductList(ArrayList<Product> listProduct) {
         this.listProduct = listProduct;
         notifyItemRangeChanged(0, listProduct.size());
     }
 
+    /**
+     * Delete Item from specific position
+     * @param position
+     */
     public void delete(int position) {
         listProduct.remove(position);
         notifyItemRangeChanged(0, listProduct.size());
@@ -56,8 +61,8 @@ public class FavoritAdapter extends RecyclerView.Adapter<FavoritAdapter.ViewHold
 
     /**
      * Represent Items of the given type
-     * @param parent
-     * @param viewType
+     * @param parent parent group
+     * @param viewType type of the view
      * @return
      */
     @Override
@@ -72,8 +77,8 @@ public class FavoritAdapter extends RecyclerView.Adapter<FavoritAdapter.ViewHold
 
     /**
      * Display the data at a specific position
-     * @param holder
-     * @param position
+     * @param holder holder
+     * @param position position
      */
     @Override
     public void onBindViewHolder(final ViewHolderFav holder, final int position) {
@@ -108,8 +113,8 @@ public class FavoritAdapter extends RecyclerView.Adapter<FavoritAdapter.ViewHold
 
     /**
      * Loading the image
-     * @param prodImgUrl
-     * @param holder
+     * @param prodImgUrl url image
+     * @param holder holder
      */
     private void loadImage(String prodImgUrl, final ViewHolderFav holder) {
         if (!prodImgUrl.equals(null)) {

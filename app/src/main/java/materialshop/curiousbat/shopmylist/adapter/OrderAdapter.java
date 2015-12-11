@@ -21,6 +21,7 @@ import materialshop.curiousbat.shopmylist.model.Product;
 import materialshop.curiousbat.shopmylist.network.VolleySingleton;
 
 /**
+ * Order Adapter
  * Created by Zied on 01/11/2015.
  */
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolderOrder> {
@@ -46,9 +47,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolderOr
 
     /**
      * Represent Items of the given type
-     * @param parent
-     * @param viewType
-     * @return
+     * @param parent parent
+     * @param viewType type of the view
+     * @return view holder order
      */
     @Override
     public ViewHolderOrder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -62,8 +63,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolderOr
 
     /**
      * Display the data at a specific position
-     * @param holder
-     * @param position
+     * @param holder holder
+     * @param position position
      */
     @Override
     public void onBindViewHolder(final ViewHolderOrder holder, final int position) {
@@ -108,12 +109,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolderOr
 
     /**
      * Loading the image
-     * @param prodImgUrl
-     * @param holder
+     * @param prodImgUrl url image
+     * @param holder holder
      */
     private void loadImage(String prodImgUrl, final ViewHolderOrder holder) {
         if (!prodImgUrl.equals(null)) {
-            //L.m("ahayyyaaa : " + urlThumbnail.toString());
             imageLoader.get(prodImgUrl.replace("localhost", "192.168.1.66"), new ImageLoader.ImageListener() {
                 @Override
                 public void onResponse(ImageLoader.ImageContainer response, boolean isImmediate) {
@@ -122,7 +122,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolderOr
 
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    //L.m("errrrrrrrrror" + error.getMessage());
                 }
             });
         }

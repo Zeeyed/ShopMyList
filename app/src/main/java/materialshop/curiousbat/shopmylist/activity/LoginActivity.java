@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                     inputEmail.setErrorEnabled(false);
                 }
 
-                // check if empty data in the form
+                // check if password is not empty in the form
                 if (email.trim().length() > 0 && password.trim().length() > 0 && validatePassword(password)) {
                     LogIn(email, password);
                 }
@@ -105,6 +105,11 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Log in the user and check if the login and password exist into SQLite
+     * @param email the user email
+     * @param pass the password user
+     */
     private void LogIn(String email, String pass) {
         ProductDatabase mDatabase = new ProductDatabase(this);
         mDatabase.open();
@@ -134,7 +139,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Check if the password is more than six character or not
+     * @param password the user password
+     * @return true if password is checked , otherwise false
+     */
     public boolean validatePassword(String password){
         return password.length() > 6;
     }

@@ -21,7 +21,6 @@ public class OrderSendActivity extends Activity {
         setContentView(R.layout.activity_order_success);
     }
 
-
     /**
      * Called when the back button is pressed
      */
