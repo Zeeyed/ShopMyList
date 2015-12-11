@@ -9,6 +9,6 @@ This app download all products from a web service provided by another app (will 
 ### Screentshots
 ![nexus 5 lollipop screenshot 4](https://cloud.githubusercontent.com/assets/6730912/11747481/c18d860c-a023-11e5-8d0b-4748cd4e7866.png)
 ![nexus 5 lollipop screenshot 2](https://cloud.githubusercontent.com/assets/6730912/11747522/fce03524-a023-11e5-8231-95f7d09b781f.png)
-![nexus 5 lollipop screenshot 1](https://cloud.githubusercontent.com/assets/6730912/11747524/023587e0-a024-11e5-8bd2-d27e64e38595.png)
+![nexus 5 lollipop screenshot 3](https://cloud.githubusercontent.com/assets/6730912/11747817/9ac00052-a025-11e5-9c5a-26f059a945ff.png)
 
 
